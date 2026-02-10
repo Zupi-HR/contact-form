@@ -1,0 +1,97 @@
+:root {
+    /* Colors */
+    --color-grey-900: hsl(187, 24%, 22%);
+    --color-grey-500: hsl(186, 15%, 59%);
+    --color-white: hsl(0, 0%, 100%);
+    --color-green-600: hsl(169, 82%, 27%);
+    --color-green-200: hsl(148, 38%, 91%);
+    --color-red: hsl(0, 66%, 54%);
+
+    /* Typography - Fonts */
+    --font-family-karla: 'Karla', sans-serif;
+
+    /* Typography - Weights */
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+
+    /* Typography - Sizes */
+    --font-size-heading: 32px;
+    --font-size-body-md: 18px;
+    --font-size-body-sm: 16px;
+
+    /* Typography - Line Heights */
+    --line-height-tight: 100%;
+    /* For headings */
+    --line-height-standard: 150%;
+    /* For body text */
+
+    /* Typography - Letter Spacing */
+    --letter-spacing-tight: -1px;
+    --letter-spacing-normal: 0px;
+}
+
+body {
+    font-family: var(--font-family-karla);
+    background-color: var(--color-green-200);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 32px;
+    padding-inline: 16px;
+}
+
+main {
+    background-color: var(--color-white);
+    border-radius: 16px;
+    padding: 24px;
+}
+
+
+.success-message {
+    display: none;
+}
+
+form {
+    display: grid;
+    gap: 24px;
+}
+
+h1 {
+    margin-bottom: 32px;
+    font-size: var(--font-size-heading);
+    color: var(--color-grey-900);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    border: 1px solid var(--color-grey-500);
+    border-radius: 8px;
+    padding-inline: 24px;
+    padding-block: 12px;
+    transition: border-color 0.2s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: var(--color-green-600);
+    outline: 2px solid var(--color-green-600);
+    outline-offset: 2px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+textarea:hover {
+    border-color: var(--color-green-600);
+}
