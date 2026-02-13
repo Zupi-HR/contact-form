@@ -86,6 +86,11 @@ fieldset .radio-group label {
     color: var(--color-grey-900);
 }
 
+fieldset .radio-group:has(input:checked) {
+    border: 2px solid var(--color-green-600);
+    background-color: var(--color-green-200);
+}
+
 input[type="text"],
 input[type="email"],
 textarea {
@@ -104,7 +109,8 @@ textarea:focus {
     outline-offset: 2px;
 }
 
-input[type="radio"] {
+input[type="radio"],
+input[type="checkbox"] {
     opacity: 0;
     position: absolute;
     width: 1px;
@@ -147,7 +153,10 @@ input[type="radio"]+label::after {
 }
 
 input[type="radio"]:checked+label::after {
-    background-color: var(--color-green-600);
+    background-color: transparent;
+    background-image: url(assets/images/icon-radio-selected.svg);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* Focus state for accessibility */
