@@ -109,8 +109,7 @@ textarea:focus {
     outline-offset: 2px;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
+input[type="radio"] {
     opacity: 0;
     position: absolute;
     width: 1px;
@@ -172,4 +171,47 @@ input[type="text"]:hover,
 input[type="email"]:hover,
 textarea:hover {
     border-color: var(--color-green-600);
+}
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: 18px auto;
+    align-items: center;
+    column-gap: 16px;
+    row-gap: 10px;
+}
+
+.checkbox-group label {
+    font-size: var(--font-size-body-sm);
+    color: var(--color-grey-900);
+}
+
+.checkbox-group input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: inherit;
+    margin: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--color-grey-500);
+    cursor: pointer;
+}
+
+.checkbox-group [type="checkbox"]:focus {
+    border-color: var(--color-green-600);
+    outline: 2px solid var(--color-green-600);
+    outline-offset: 2px;
+}
+
+.checkbox-group input[type="checkbox"]:checked {
+    background-image: url(assets/images/icon-checkbox-check.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: none;
+}
+
+.checkbox-group .error {
+    grid-column: 1 / -1;
+    margin-top: 0;
 }
