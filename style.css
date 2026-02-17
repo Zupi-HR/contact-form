@@ -50,6 +50,28 @@ main {
 
 .success-message {
     display: none;
+    background-color: var(--color-grey-900);
+    color: var(--color-white);
+    padding: 24px;
+    border-radius: 12px;
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 90%;
+    max-width: 450px;
+}
+
+.success-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.success-header h2 {
+    font-size: var(--font-size-body-md);
+    font-weight: var(--font-weight-bold);
 }
 
 form {
@@ -224,7 +246,7 @@ textarea:hover {
 }
 
 .input-error {
-    border-color: var(--color-red);
+    border-color: var(--color-red) !important;
 }
 
 .btn-submit {
@@ -248,6 +270,8 @@ textarea:hover {
     outline: 2px solid var(--color-grey-900);
     outline-offset: 2px;
 }
+
+
 
 @media (min-width: 690px) {
     form {
