@@ -29,12 +29,12 @@
       <div class="form-group">
         <label for="first-name">First Name <span class="required" aria-hidden="true">*</span></label>
         <input type="text" id="first-name" name="first-name" required>
-        <span class="error">This field is required</span>
+        <span class="error required-error">This field is required</span>
       </div>
       <div class="form-group">
         <label for="last-name">Last Name <span class="required" aria-hidden="true">*</span></label>
         <input type="text" id="last-name" name="last-name" required>
-        <span class="error">This field is required</span>
+        <span class="error required-error">This field is required</span>
       </div>
       <div class="form-group">
         <label for="email">Email Address <span class="required" aria-hidden="true">*</span></label>
@@ -52,18 +52,18 @@
           <input type="radio" name="query-type" id="support-request" value="support-request">
           <label for="support-request">Support Request</label>
         </div>
-        <span class="error">Please select a query type</span>
+        <span class="error required-error">Please select a query type</span>
       </fieldset>
       <div class="form-group">
         <label for="message">Message <span class="required" aria-hidden="true">*</span></label>
         <textarea name="message" id="message" required></textarea>
-        <span class="error">This field is required</span>
+        <span class="error required-error">This field is required</span>
       </div>
       <div class="form-group checkbox-group">
         <input type="checkbox" name="consent" id="consent" required>
         <label for="consent">I consent to being contacted by the team <span class="required"
             aria-hidden="true">*</span></label>
-        <span class="error">To submit this form, please consent to being contacted</span>
+        <span class="error required-error">To submit this form, please consent to being contacted</span>
       </div>
       <button type="submit" class="btn-submit">Submit</button>
     </form>

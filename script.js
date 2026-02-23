@@ -15,32 +15,18 @@ form.addEventListener("submit", (e) => {
 });
 
 function hideValidationError(element) {
-  let span =
-    element.parentElement.querySelector(".error") ||
-    element.closest("fieldset")?.querySelector(".error");
-  if (span) {
-    span.style.display = "none";
-  }
-  if (element.type === "radio") {
+  const parentElement =
+    element.type === "radio"
+      ? element.closest("fieldset")
+      : element.parentElement;
+
+  parentElement
+    .querySelectorAll(".error")
+    .forEach((error) => (error.style.display = "none"));
+
+  if (element.type === "radio")
     element.parentElement.classList.remove("input-error");
-  } else {
-    element.classList.remove("input-error");
-  }
+  else element.classList.remove("input-error");
 }
 
-function showValidationError(element) {
-  let parentElement = element.parentElement;
-  let span =
-    parentElement.querySelector(".error") ||
-    element.closest("fieldset")?.querySelector(".error");
-  if (element.validity.valueMissing) {
-    span.style.display = "block";
-    if (element.type === "radio") {
-      element.parentElement.classList.add("input-error");
-    } else {
-      element.classList.add("input-error");
-    }
-  } else if (element.validity.typeMismatch) {
-    span = parentElement.querySelector("email-error");
-  }
-}
+function showValidationError(element) {}
