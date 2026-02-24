@@ -46,8 +46,5 @@ function showValidationError(element, errorType) {
   if (element.type === "radio") parentElement.classList.add("input-error");
   else element.classList.add("input-error");
 
-  if (element.type === "email") {
-    parentElement.querySelector(".email-error").style.display = "block";
-  }
-  parentElement.querySelector(".required-error").style.display = "block";
+  parentElement.querySelector(`.${errorType}-error`).style.display = "block";
 }
