@@ -43,7 +43,8 @@ function showValidationError(element, errorType) {
       ? element.closest("fieldset")
       : element.parentElement;
 
-  if (element.type === "radio") parentElement.classList.add("input-error");
+  if (element.type === "radio")
+    element.parentElement.classList.add("input-error");
   else element.classList.add("input-error");
 
   parentElement.querySelector(`.${errorType}-error`).style.display = "block";
