@@ -10,7 +10,7 @@ form.addEventListener("submit", (e) => {
   }
   formElements.forEach((element) => {
     hideValidationError(element);
-    showValidationError(element);
+    validateForm(element);
   });
 });
 
@@ -29,4 +29,25 @@ function hideValidationError(element) {
   else element.classList.remove("input-error");
 }
 
-function showValidationError(element) {}
+function validateForm(element) {
+  if (element.validity.valueMissing) {
+    showValidationError(element, "required");
+  } else if (element.validity.typeMismatch) {
+    showValidationError(element, "email");
+  }
+}
+
+function showValidationError(element, errorType) {
+  const parentElement =
+    element.type === "radio"
+      ? element.closest("fieldset")
+      : element.parentElement;
+
+  if (element.type === "radio") parentElement.classList.add("input-error");
+  else element.classList.add("input-error");
+
+  if (element.type === "email") {
+    parentElement.querySelector(".email-error").style.display = "block";
+  }
+  parentElement.querySelector(".required-error").style.display = "block";
+}
