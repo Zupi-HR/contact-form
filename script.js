@@ -4,17 +4,22 @@ const successMessage = document.querySelector(".success-message");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+  formElements.forEach((element) => {
+    hideValidationError(element);
+  });
+
   if (form.checkValidity()) {
     successMessage.style.display = "block";
+    form.reset();
     return;
   }
   formElements.forEach((element) => {
-    hideValidationError(element);
     validateForm(element);
   });
 });
 
 function hideValidationError(element) {
+  element.setAttribute("aria-invalid", "false");
   const parentElement =
     element.type === "radio"
       ? element.closest("fieldset")
@@ -30,10 +35,13 @@ function hideValidationError(element) {
 }
 
 function validateForm(element) {
-  if (element.validity.valueMissing) {
-    showValidationError(element, "required");
-  } else if (element.validity.typeMismatch) {
-    showValidationError(element, "email");
+  if (!element.checkValidity()) {
+    element.setAttribute("aria-invalid", "true");
+    if (element.validity.valueMissing) {
+      showValidationError(element, "required");
+    } else if (element.validity.typeMismatch) {
+      showValidationError(element, "email");
+    }
   }
 }
 

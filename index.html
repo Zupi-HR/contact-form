@@ -28,53 +28,58 @@
     <form action="" novalidate>
       <div class="form-group">
         <label for="first-name">First Name <span class="required" aria-hidden="true">*</span></label>
-        <input type="text" id="first-name" name="first-name" required>
-        <span class="error required-error">This field is required</span>
+        <input type="text" id="first-name" name="first-name" required aria-describedby="first-name-error">
+        <span id="first-name-error" class="error required-error">This field is required</span>
       </div>
       <div class="form-group">
         <label for="last-name">Last Name <span class="required" aria-hidden="true">*</span></label>
-        <input type="text" id="last-name" name="last-name" required>
-        <span class="error required-error">This field is required</span>
+        <input type="text" id="last-name" name="last-name" required aria-describedby="last-name-error">
+        <span id="last-name-error" class="error required-error">This field is required</span>
       </div>
       <div class="form-group">
         <label for="email">Email Address <span class="required" aria-hidden="true">*</span></label>
-        <input type="email" id="email" name="email" required>
-        <span class="error email-error">Please enter a valid email address</span>
-        <span class="error required-error">This field is required</span>
+        <input type="email" id="email" name="email" required aria-describedby="email-error-required email-error-format">
+        <span id="email-error-format" class="error email-error">Please enter a valid email address</span>
+        <span id="email-error-required" class="error required-error">This field is required</span>
       </div>
       <fieldset>
         <legend>Query Type <span class="required" aria-hidden="true">*</span></legend>
         <div class="radio-group">
-          <input type="radio" name="query-type" id="general-enquiry" value="general-enquiry" required>
+          <input aria-describedby="query-error" type="radio" name="query-type" id="general-enquiry"
+            value="general-enquiry" required>
           <label for="general-enquiry">General Enquiry</label>
         </div>
         <div class="radio-group">
-          <input type="radio" name="query-type" id="support-request" value="support-request">
+          <input aria-describedby="query-error" type="radio" name="query-type" id="support-request"
+            value="support-request">
           <label for="support-request">Support Request</label>
         </div>
-        <span class="error required-error">Please select a query type</span>
+        <span id="query-error" class="error required-error">Please select a query type</span>
       </fieldset>
       <div class="form-group">
         <label for="message">Message <span class="required" aria-hidden="true">*</span></label>
-        <textarea name="message" id="message" required></textarea>
-        <span class="error required-error">This field is required</span>
+        <textarea name="message" id="message" required aria-describedby="message-error"></textarea>
+        <span id="message-error" class="error required-error">This field is required</span>
       </div>
       <div class="form-group checkbox-group">
-        <input type="checkbox" name="consent" id="consent" required>
+        <input type="checkbox" name="consent" id="consent" required aria-describedby="consent-error">
         <label for="consent">I consent to being contacted by the team <span class="required"
             aria-hidden="true">*</span></label>
-        <span class="error required-error">To submit this form, please consent to being contacted</span>
+        <span id="consent-error" class="error required-error">To submit this form, please consent to being
+          contacted</span>
       </div>
       <button type="submit" class="btn-submit">Submit</button>
     </form>
   </main>
 
-  <div class="success-message">
-    <div class="success-header">
-      <img src="assets/images/icon-success-check.svg" alt="">
-      <h2>Message Sent!</h2>
+  <div aria-live="polite">
+    <div class="success-message">
+      <div class="success-header">
+        <img src="assets/images/icon-success-check.svg" alt="">
+        <h2>Message Sent!</h2>
+      </div>
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
     </div>
-    <p>Thanks for completing the form. We'll be in touch soon!</p>
   </div>
 
 
